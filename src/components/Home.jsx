@@ -1,12 +1,14 @@
 import { FiDownload } from "react-icons/fi";
 import Social from "./Social";
+import Photo from "./Photo";
+import Stats from "./Stats";
 
 const Home = () => {
   return (
     <div className="h-full">
       <div className="container mx-auto">
-        <div className="flex flex-col lg:flex-row flex-center justify-between lg:pt-8 lg:pb-24">
-          <div className="text-center lg:text-left">
+        <div className="flex flex-col lg:flex-row flex-center  justify-between lg:pt-8 lg:pb-24">
+          <div className="text-center lg:text-left order-2 lg:order-none">
             <span className="text-xl">Front-End Developer</span>
             <h1 className="text-[48px] lg:text-[80px] font-semibold">
               Hello I'm <br />
@@ -23,16 +25,17 @@ const Home = () => {
                 <FiDownload className="text-xl" />
               </button>
               <div className="">
-                
-                    <Social  />
-                
+                <Social />
               </div>
             </div>
           </div>
           {/* photo */}
-          <div>photo</div>
+          <div className="order-1 lg:order-none mb-8 lg:mb-0">
+            <Photo />
+          </div>
         </div>
       </div>
+      <Stats />
     </div>
   );
 };
