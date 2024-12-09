@@ -2,14 +2,19 @@ import { FiDownload } from "react-icons/fi";
 import Social from "./Social";
 import Photo from "./Photo";
 import Stats from "./Stats";
+import { useTypewriter,Cursor } from "react-simple-typewriter";
 
 const Home = () => {
+  const [text] = useTypewriter({
+    words:['Front-End Developer','Programmer','Software Developer'],
+    loop:0,
+  })
   return (
-    <div className="h-full">
+    <div className="h-full p-4">
       <div className="container mx-auto">
         <div className="flex flex-col lg:flex-row flex-center  justify-between lg:pt-8 lg:pb-24">
           <div className="text-center lg:text-left order-2 lg:order-none">
-            <span className="text-xl">Front-End Developer</span>
+            <span className="text-xl  lg:ml-2">{text}</span><Cursor/> 
             <h1 className="text-[48px] lg:text-[80px] font-semibold">
               Hello I'm <br />
               <span className="text-accent">Imtiaz Hossen</span>
