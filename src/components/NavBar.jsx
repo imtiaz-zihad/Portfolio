@@ -3,8 +3,9 @@ import { Link, useLocation } from "react-router-dom";
 const links = [
   { name: "home", path: "/" },
   { name: "services", path: "/services" },
-  { name: "resume", path: "/resume" },
-  { name: "work", path: "/work" },
+  { name: "skill", path: "/skill" },
+  { name: "projects", path: "/projects" },
+  { name: "about me", path: "/about" },
   { name: "contact", path: "/contact" },
 ];
 

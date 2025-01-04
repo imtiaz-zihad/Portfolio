@@ -2,19 +2,25 @@ import { FiDownload } from "react-icons/fi";
 import Social from "./Social";
 import Photo from "./Photo";
 import Stats from "./Stats";
-import { useTypewriter,Cursor } from "react-simple-typewriter";
+import { useTypewriter, Cursor } from "react-simple-typewriter";
+import { Helmet } from "react-helmet";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const [text] = useTypewriter({
-    words:['Front-End Developer','Programmer','Software Developer'],
-    loop:0,
-  })
+    words: ["Front-End Developer", "Programmer", "Software Developer"],
+    loop: 0,
+  });
   return (
     <div className="h-full p-4">
+      <Helmet>
+        <title>Home</title>
+      </Helmet>
       <div className="container mx-auto">
         <div className="flex flex-col lg:flex-row flex-center  justify-between lg:pt-8 lg:pb-24">
           <div className="text-center lg:text-left order-2 lg:order-none">
-            <span className="text-xl  lg:ml-2">{text}</span><Cursor/> 
+            <span className="text-xl  lg:ml-2">{text}</span>
+            <Cursor />
             <h1 className="text-[48px] lg:text-[80px] font-semibold">
               Hello I'm <br />
               <span className="text-accent">Imtiaz Hossen</span>
@@ -25,10 +31,18 @@ const Home = () => {
             </p>
             {/* btn and social icon  */}
             <div className="flex flex-col lg:flex-row items-center gap-8">
-              <button className="btn bg-transparent text-accent border-2 border-accent uppercase gap-2 flex font-bold rounded-3xl hover:bg-accent  hover:text-black">
-                <span>Download CV</span>
-                <FiDownload className="text-xl" />
-              </button>
+              <Link
+                to={
+                  "https://docs.google.com/document/d/1EodzVR5a1Vlj1UvFNGlnq-XcQ71h8axs/edit?usp=sharing&ouid=112588574008087115426&rtpof=true&sd=true"
+                }
+                target="_blank"
+              >
+                <button className="btn bg-transparent text-accent border-2 border-accent uppercase gap-2 flex font-bold rounded-3xl hover:bg-accent  hover:text-black">
+                  <span className="">Download CV</span>
+
+                  <FiDownload className="text-xl" />
+                </button>
+              </Link>
               <div className="">
                 <Social />
               </div>
