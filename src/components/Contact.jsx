@@ -1,5 +1,6 @@
 import emailjs from "@emailjs/browser";
 import { useRef } from "react";
+import { Helmet } from "react-helmet";
 
 const Contact = () => {
   const form = useRef();
@@ -23,6 +24,9 @@ const Contact = () => {
 
   return (
     <div className="max-w-6xl mx-auto my-10 p-6 bg-gray-800 text-gray-300 rounded-xl shadow-xl">
+      <Helmet>
+        <title>Contact</title>
+      </Helmet>
       <h1 className="text-4xl font-bold text-accent text-center mb-6 animate__animated animate__fadeIn">
         Contact Information
       </h1>
@@ -36,13 +40,13 @@ const Contact = () => {
               href="mailto:imtiaz@example.com"
               className="text-blue-400 hover:text-blue-600"
             >
-              imtiaz@example.com
+              mdimtiazzihad.com
             </a>
           </div>
 
           <div className="flex items-center space-x-4">
             <span className="font-semibold text-accent">Phone:</span>
-            <p className="text-gray-300">+1 (234) 567-8901</p>
+            <p className="text-gray-300">+8801958403338</p>
           </div>
 
           <div className="flex items-center space-x-4">
@@ -52,7 +56,7 @@ const Contact = () => {
               target="_blank"
               className="text-green-400 hover:text-green-600"
             >
-              +1 (234) 567-8901
+              +8801958403338
             </a>
           </div>
         </div>

@@ -1,6 +1,11 @@
+import { Helmet } from "react-helmet";
+
 const About = () => {
     return (
       <div className="px-4 py-10 bg-gray-900 text-white">
+        <Helmet>
+        <title>About Me</title>
+      </Helmet>
         <div className="max-w-4xl mx-auto my-10 p-6 bg-gray-800 text-gray-300 rounded-xl shadow-lg transform transition duration-500 ease-in-out hover:scale-105 hover:border-4 hover:border-accent">
           <h1 className="text-4xl font-bold text-accent text-center mb-6 animate__animated animate__fadeIn">
             About Me
