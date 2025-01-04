@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import photo from "../assets/picback.png";
 const Photo = () => {
   return (
-    <div className="w-full h-full relative">
+    <div className="w-full h-full relative flex justify-center items-center">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{

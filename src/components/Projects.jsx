@@ -1,4 +1,9 @@
-import  { useState } from "react";
+import { useState } from "react";
+import { FaReact, FaNodeJs, FaGithub, FaExternalLinkAlt, FaDatabase } from "react-icons/fa";
+import { SiFirebase, SiTailwindcss } from "react-icons/si";
+import volunteer from "../assets/volunteer.png";
+import chillGamer from "../assets/chillgamer.png";
+import discount from "../assets/discount.png";
 
 const Projects = () => {
     const [selectedProject, setSelectedProject] = useState(null);
@@ -7,35 +12,35 @@ const Projects = () => {
         {
             id: 1,
             name: "Volunteer Hunter",
-            image: "ecommerce.jpg", // Replace with actual image path
-            technologies: ["React", "Node.js", "MongoDB"],
-            description: "Volunteer Hunter is an intuitive platform that connects people with volunteer opportunities. Whether you're looking to give back to your community or in need of volunteers, this platform helps match you with the right causes. With its user-friendly interface and seamless navigation, Volunteer Hunter makes it easier than ever to engage in volunteer activities.",
+            image: volunteer,
+            technologies: ["React", "Node.js", "MongoDB", "Firebase"],
+            description: "Volunteer Hunter connects people with volunteer opportunities, making it easy to engage in meaningful causes through a user-friendly platform.",
             liveLink: "https://volenter-find.web.app/",
-            githubClientLink: "https://github.com/username/ecommerce",
-            githubServerLink: "https://github.com/username/ecommerce",
-            details: "Faced challenges in payment gateway integration and data security. Future plans include a recommendation engine and enhanced UX.",
+            githubClientLink: "https://github.com/imtiaz-zihad/Volunteer-Hunter-client",
+            githubServerLink: "https://github.com/imtiaz-zihad/Volunteer-Hunter-Server",
+            details: "Volunteer Hunter is an intuitive platform that connects people with volunteer opportunities. Whether you're looking to give back to your community or in need of volunteers, this platform helps match you with the right causes.",
         },
         {
             id: 2,
-            name: "Portfolio Website",
-            image: "portfolio.jpg", // Replace with actual image path
+            name: "Chill Gamer",
+            image: chillGamer,
             technologies: ["React", "Tailwind CSS", "Netlify"],
-            description: "A personal portfolio to showcase projects and skills.",
-            liveLink: "https://portfolio-live-link.com",
-            githubClientLink: "https://github.com/username/ecommerce",
-            githubServerLink: "https://github.com/username/ecommerce",
-            details: "Worked on responsive design and SEO. Future updates will include a blog and real-time content updates.",
+            description: "A game review application where you can add game reviews and see what people think about different games.",
+            liveLink: "https://chill-gamer-38a71.web.app/",
+            githubClientLink: "https://github.com/imtiaz-zihad/Chill--gamer-client",
+            githubServerLink: "https://github.com/imtiaz-zihad/Chill--gamer-server",
+            details: "A game review application that lets you share your thoughts on games and read reviews from others. Explore detailed feedback and ratings on a variety of games from players worldwide.",
         },
         {
             id: 3,
-            name: "Weather App",
-            image: "weather.jpg", // Replace with actual image path
-            technologies: ["React", "OpenWeather API"],
-            description: "A weather forecasting app that displays real-time weather data.",
-            liveLink: "https://weather-live-link.com",
-            githubClientLink: "https://github.com/username/ecommerce",
-            githubServerLink: "https://github.com/username/ecommerce",
-            details: "Managed API rate limits and error handling. Plans include adding language support and detailed forecasts.",
+            name: "Discount Pro",
+            image: discount,
+            technologies: ["React", "Firebase", "Tailwind CSS"],
+            description: "A React application that allows users to view and update their profile information, including their name and profile picture.",
+            liveLink: "https://discount-pro-3e365.web.app/",
+            githubClientLink: "https://github.com/imtiaz-zihad/Discount-Pro",
+            githubServerLink: "https://github.com/imtiaz-zihad/Discount-Pro",
+            details: "This project is designed to check discounted items on any e-commerce site in Bangladesh. Users can view discount types and expiration dates.",
         },
     ];
 
@@ -80,9 +85,23 @@ const Projects = () => {
                         <h2 className="text-3xl font-bold mb-4">
                             {selectedProject.name}
                         </h2>
-                        <p>
-                            <strong>Main Technologies:</strong>{" "}
-                            {selectedProject.technologies.join(", ")}
+                        <p className="mb-4">
+                            <strong>Main Technologies:</strong>
+                            <div className="flex flex-wrap gap-2 mt-2">
+                                {selectedProject.technologies.map((tech) => (
+                                    <span
+                                        key={tech}
+                                        className="bg-gray-700 px-3 py-1 rounded-full text-sm flex items-center gap-2"
+                                    >
+                                        {tech === "React" && <FaReact />}
+                                        {tech === "Node.js" && <FaNodeJs />}
+                                        {tech === "MongoDB" && <FaDatabase />}
+                                        {tech === "Firebase" && <SiFirebase />}
+                                        {tech === "Tailwind CSS" && <SiTailwindcss />}
+                                        {tech}
+                                    </span>
+                                ))}
+                            </div>
                         </p>
                         <p className="my-4">
                             <strong>Description:</strong> {selectedProject.description}
@@ -93,9 +112,9 @@ const Projects = () => {
                                 href={selectedProject.liveLink}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-blue-400 underline hover:text-blue-500"
+                                className="text-blue-400 underline hover:text-blue-500 flex items-center gap-2"
                             >
-                                {selectedProject.liveLink}
+                                <FaExternalLinkAlt /> {selectedProject.liveLink}
                             </a>
                         </p>
                         <p>
@@ -104,9 +123,9 @@ const Projects = () => {
                                 href={selectedProject.githubClientLink}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-blue-400 underline hover:text-blue-500"
+                                className="text-blue-400 underline hover:text-blue-500 flex items-center gap-2"
                             >
-                                {selectedProject.githubClientLink}
+                                <FaGithub /> {selectedProject.githubClientLink}
                             </a>
                         </p>
                         <p>
@@ -115,9 +134,9 @@ const Projects = () => {
                                 href={selectedProject.githubServerLink}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-blue-400 underline hover:text-blue-500"
+                                className="text-blue-400 underline hover:text-blue-500 flex items-center gap-2"
                             >
-                                {selectedProject.githubServerLink}
+                                <FaGithub /> {selectedProject.githubServerLink}
                             </a>
                         </p>
                         <p className="mt-4">

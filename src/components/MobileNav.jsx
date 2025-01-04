@@ -1,33 +1,35 @@
 /* eslint-disable react/prop-types */
-import { Link, useLocation } from "react-router-dom";
-
-// Links for navigation
-const links = [
-  { name: "Home", path: "/" },
-  { name: "Services", path: "/services" },
-  { name: "Work", path: "/work" },
-  { name: "Resume", path: "/resume" },
-  { name: "Contact", path: "/contact" },
-];
+import { Link } from "react-router-dom";
 
 const MobileNav = ({ closeMenu }) => {
-  const location = useLocation(); // Get the current path
-
   return (
-    <div className="flex flex-col items-center">
-      {links.map((link) => (
-        <Link
-          key={link.path}
-          to={link.path}
-          className={`block py-4 px-6 text-lg text-white hover:bg-gray-700 ${
-            location.pathname === link.path ? "bg-gray-600" : ""
-          }`}
-          onClick={closeMenu} // Close the menu after clicking a link
-        >
-          {link.name}
+    <ul className="text-white space-y-4">
+      <li>
+        <Link to="/" onClick={closeMenu} className="hover:text-accent">
+          Home
         </Link>
-      ))}
-    </div>
+      </li>
+      <li>
+        <Link to="/projects" onClick={closeMenu} className="hover:text-accent">
+          Projects
+        </Link>
+      </li>
+      <li>
+        <Link to="/about" onClick={closeMenu} className="hover:text-accent">
+          About
+        </Link>
+      </li>
+      <li>
+        <Link to="/skill" onClick={closeMenu} className="hover:text-accent">
+          Skill
+        </Link>
+      </li>
+      <li>
+        <Link to="/contact" onClick={closeMenu} className="hover:text-accent">
+          Contact
+        </Link>
+      </li>
+    </ul>
   );
 };
 

@@ -11,7 +11,7 @@ const Header = () => {
   };
 
   return (
-    <div className="py-8 text-white p-4 ">
+    <div className="py-8 text-white px-4 bg-gray-900">
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo */}
         <Link to="/">
@@ -24,7 +24,9 @@ const Header = () => {
         <div className="hidden lg:flex items-center gap-8">
           <NavBar />
           <Link to="/contact">
-            <button className="btn bg-accent text-black font-bold border-none rounded-3xl ">Hire me</button>
+            <button className="btn bg-accent text-black font-bold border-none rounded-3xl">
+              Hire me
+            </button>
           </Link>
         </div>
 
@@ -48,10 +50,18 @@ const Header = () => {
             </svg>
           </button>
 
-          {/* Mobile Menu: Slide down when clicked */}
+          {/* Backdrop for Mobile Menu */}
+          {isMenuOpen && (
+            <div
+              className="fixed inset-0 bg-black bg-opacity-50 z-40"
+              onClick={() => setIsMenuOpen(false)}
+            ></div>
+          )}
+
+          {/* Mobile Menu */}
           <div
             className={`absolute right-0 top-16 bg-gray-800 w-64 p-4 transition-all duration-300 ease-in-out transform ${
-              isMenuOpen ? "translate-y-6" : "translate-y-[-140%]"
+              isMenuOpen ? "translate-y-0 opacity-100 z-50" : "translate-y-[-140%] opacity-0 z-[-10]"
             }`}
           >
             <MobileNav closeMenu={() => setIsMenuOpen(false)} />
