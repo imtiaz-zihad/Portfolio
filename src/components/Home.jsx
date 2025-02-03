@@ -33,7 +33,7 @@ const Home = () => {
             <div className="flex flex-col lg:flex-row items-center gap-8">
               <Link
                 to={
-                  "https://docs.google.com/document/d/1EodzVR5a1Vlj1UvFNGlnq-XcQ71h8axs/edit?usp=sharing&ouid=112588574008087115426&rtpof=true&sd=true"
+                  "https://drive.google.com/file/d/1ZKTNGcqFb8jcZmUZ_raGN02aWoeRwdXA/view?usp=sharing"
                 }
                 target="_blank"
               >
