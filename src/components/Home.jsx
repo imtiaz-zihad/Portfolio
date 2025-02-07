@@ -12,17 +12,18 @@ const Home = () => {
     loop: 0,
   });
   return (
-    <div className="h-full p-4">
+    <div id="home" className="p-4  min-h-screen">
+
       <Helmet>
-        <title>Home</title>
+        <title>IMTIAZ HOSSEN</title>
       </Helmet>
-      <div className="container mx-auto">
+      <div className="container mx-auto ">
         <div className="flex flex-col lg:flex-row flex-center  justify-between lg:pt-8 lg:pb-24">
           <div className="text-center lg:text-left order-2 lg:order-none">
             <span className="text-xl  lg:ml-2">{text}</span>
             <Cursor />
             <h1 className="text-[48px] lg:text-[80px] font-semibold">
-              Hello I'm <br />
+              Hello I&apos;m <br />
               <span className="text-accent">Imtiaz Hossen</span>
             </h1>
             <p className="max-w-[500px] mb-9 text-white/80">

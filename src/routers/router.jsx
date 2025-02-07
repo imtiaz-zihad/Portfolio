@@ -5,7 +5,7 @@ import Service from "../components/Service";
 import Skill from "../components/Skill";
 
 import Contact from "../components/Contact";
-import Work from "../components/Projects";
+
 import AboutMe from "../components/AboutMe";
 import Projects from "../components/Projects";
 

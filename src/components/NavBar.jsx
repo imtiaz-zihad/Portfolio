@@ -1,31 +1,36 @@
-import { Link, useLocation } from "react-router-dom";
-
 const links = [
-  { name: "home", path: "/" },
-  { name: "services", path: "/services" },
-  { name: "skill", path: "/skill" },
-  { name: "projects", path: "/projects" },
-  { name: "about me", path: "/about" },
-  { name: "contact", path: "/contact" },
+  { name: "home", id: "home" },
+  { name: "skill", id: "skill" },
+  { name: "projects", id: "projects" },
+  { name: "about me", id: "about" },
+  { name: "contact", id: "contact" },
 ];
 
 const NavBar = () => {
-  const location = useLocation(); // useLocation returns an object
-  const currentPath = location.pathname; // Access the pathname property
+  const handleScroll = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      // Get the position of the section relative to the document
+      const offsetTop = section.getBoundingClientRect().top + window.pageYOffset - 80; // Subtract the navbar height (80px)
+      
+      // Smooth scroll to the calculated position
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth', // Ensure smooth scrolling
+      });
+    }
+  };
 
   return (
     <div className="flex gap-8">
       {links.map((link, index) => (
-        <Link
-          to={link.path}
+        <button
           key={index}
-          className={`${
-            link.path === currentPath &&
-            "text-green-300 border-b-2 border-accent"
-          } capitalize font-medium hover:text-accent transition-all` }
+          onClick={() => handleScroll(link.id)}
+          className="capitalize font-medium hover:text-accent transition-all"
         >
           {link.name}
-        </Link>
+        </button>
       ))}
     </div>
   );

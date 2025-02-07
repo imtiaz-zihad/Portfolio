@@ -1,6 +1,7 @@
 import emailjs from "@emailjs/browser";
 import { useRef } from "react";
-import { Helmet } from "react-helmet";
+import toast from "react-hot-toast";
+import Swal from "sweetalert2";
 
 const Contact = () => {
   const form = useRef();
@@ -14,19 +15,29 @@ const Contact = () => {
       })
       .then(
         () => {
-          console.log('SUCCESS!');
+          Swal.fire({
+            title: "Drag me!",
+            icon: "success",
+            draggable: true
+          });
+          
         },
         (error) => {
-          console.log('FAILED...', error.text);
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Something went wrong!",
+            
+          });
+          toast.error("Failed...",error.text)
+          
         },
       );
   };
 
   return (
-    <div className="max-w-6xl mx-auto my-10 p-6 bg-gray-800 text-gray-300 rounded-xl shadow-xl">
-      <Helmet>
-        <title>Contact</title>
-      </Helmet>
+    <div id="contact"  className="max-w-6xl mx-auto my-10 p-6 bg-gray-800 text-gray-300 rounded-xl shadow-xl">
+      
       <h1 className="text-4xl font-bold text-accent text-center mb-6 animate__animated animate__fadeIn">
         Contact Information
       </h1>
@@ -37,7 +48,7 @@ const Contact = () => {
           <div className="flex items-center space-x-4">
             <span className="font-semibold text-accent">Email:</span>
             <a
-              href="mailto:imtiaz@example.com"
+              href="mailto:mdimtiazzihad.com"
               className="text-blue-400 hover:text-blue-600"
             >
               mdimtiazzihad.com
@@ -52,7 +63,7 @@ const Contact = () => {
           <div className="flex items-center space-x-4">
             <span className="font-semibold text-accent">WhatsApp:</span>
             <a
-              href="https://wa.me/+12345678901"
+              href="https://wa.me/8801958403338"
               target="_blank"
               className="text-green-400 hover:text-green-600"
             >

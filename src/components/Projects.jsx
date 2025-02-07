@@ -10,7 +10,7 @@ import { SiFirebase, SiTailwindcss } from "react-icons/si";
 import volunteer from "../assets/volunteer.png";
 import chillGamer from "../assets/chillgamer.png";
 import discount from "../assets/discount.png";
-import { Helmet } from "react-helmet";
+
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -60,10 +60,8 @@ const Projects = () => {
   ];
 
   return (
-    <div className="bg-gray-900 text-white py-10 px-5">
-      <Helmet>
-        <title>Projects</title>
-      </Helmet>
+    <div  id="projects" className="bg-gray-900 text-white py-10 px-5">
+   
       <h1 className="text-4xl font-bold text-center mb-10 text-gradient">
         My Projects
       </h1>

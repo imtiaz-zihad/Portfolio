@@ -2,17 +2,18 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import NavBar from "./NavBar"; // Desktop Navbar
 import MobileNav from "./MobileNav"; // Mobile Navbar
+import { FiDownload } from "react-icons/fi";
 
 const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // State to manage menu visibility
+  const [isMenuOpen, setIsMenuOpen] = useState(false); 
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen); // Toggle the menu open/close state
+    setIsMenuOpen(!isMenuOpen); 
   };
 
   return (
-    <div className="py-8 text-white px-4 bg-gray-900">
-      <div className="container mx-auto flex justify-between items-center">
+    <div className="sticky top-0 z-50 h-20 py-4 text-white px-4 bg-gray-900">
+      <div className="container mx-auto flex justify-between items-center ">
         {/* Logo */}
         <Link to="/">
           <h1 className="text-4xl font-semibold">
@@ -23,11 +24,19 @@ const Header = () => {
         {/* Desktop Navigation */}
         <div className="hidden lg:flex items-center gap-8">
           <NavBar />
-          <Link to="/contact">
-            <button className="btn bg-accent text-black font-bold border-none rounded-3xl">
-              Hire me
-            </button>
-          </Link>
+          <Link
+                          to={
+                            "https://drive.google.com/file/d/1ZKTNGcqFb8jcZmUZ_raGN02aWoeRwdXA/view?usp=sharing"
+                          }
+                          target="_blank"
+                        >
+                          <button className="btn bg-transparent text-accent border-2 border-accent uppercase gap-2 flex font-bold rounded-3xl hover:bg-accent  hover:text-black">
+                            <span className="">Download CV</span>
+          
+                            <FiDownload className="text-xl" />
+                          </button>
+                        </Link>
+          
         </div>
 
         {/* Mobile Navigation: Hamburger Icon */}

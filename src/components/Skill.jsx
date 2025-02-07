@@ -1,5 +1,5 @@
 import { useSpring, useTrail, animated } from "@react-spring/web";
-import { Helmet } from "react-helmet";
+
 import {
   FaReact,
   FaNodeJs,
@@ -76,10 +76,8 @@ const Skill = () => {
       style={fadeIn}
       className="skill-section p-8 bg-gray-900 rounded-lg shadow-md"
     >
-      <Helmet>
-        <title>Skill</title>
-      </Helmet>
-      <h2 className="text-3xl font-bold text-center mb-8 text-white">
+      
+      <h2 id="skill"  className="text-3xl font-bold text-center mb-8 text-white">
         My Skills
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
