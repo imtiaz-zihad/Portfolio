@@ -3,6 +3,7 @@ const links = [
   { name: "about me", id: "about" },
   { name: "skill", id: "skill" },
   { name: "projects", id: "projects" },
+  { name: "education", id: "education" },
   { name: "contact", id: "contact" },
 ];
 
