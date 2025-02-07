@@ -1,8 +1,8 @@
 const links = [
   { name: "home", id: "home" },
+  { name: "about me", id: "about" },
   { name: "skill", id: "skill" },
   { name: "projects", id: "projects" },
-  { name: "about me", id: "about" },
   { name: "contact", id: "contact" },
 ];
 

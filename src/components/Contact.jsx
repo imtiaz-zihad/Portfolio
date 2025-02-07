@@ -16,7 +16,7 @@ const Contact = () => {
       .then(
         () => {
           Swal.fire({
-            title: "Drag me!",
+            title: "Email Sent successfully!",
             icon: "success",
             draggable: true
           });
