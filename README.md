@@ -45,7 +45,7 @@ A platform for users to find and join volunteer opportunities in their area.
 
 Feel free to reach out for collaborations, job opportunities, or just to chat about tech! You can contact me via:
 
-- **Email**: imtiaz.hossen@example.com
+- **Email**: mdimtiazzihad@gmail.com
 - **LinkedIn**: [Imtiaz Hossen](https://www.linkedin.com/in/imtiaz-hossen)
 - **GitHub**: [Imtiaz Hossen GitHub](https://github.com/imtiaz-hossen)
 
