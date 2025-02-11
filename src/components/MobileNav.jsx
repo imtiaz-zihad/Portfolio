@@ -4,9 +4,10 @@
 const links = [
   { name: "home", id: "home" },
   // { name: "services", id: "services" },
+  { name: "about me", id: "about" },
   { name: "skill", id: "skill" },
   { name: "projects", id: "projects" },
-  { name: "about me", id: "about" },
+  { name: "education", id: "education" },
   { name: "contact", id: "contact" },
 ];
 
@@ -20,7 +21,7 @@ const MobileNav = ({ closeMenu }) => {
   };
   
   return (
-    <ul className="text-white space-y-4">
+    <ul className="text-white space-y-4 flex flex-col">
       {links.map((link, index) => (
         <button
           key={index}
